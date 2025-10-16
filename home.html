@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>קלימפרו | ירמיהו מיזוג אוויר</title>
+  <title>קלימפרו | מומחה למיזוג אוויר</title>
 
   <!-- ✅ Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -58,7 +58,7 @@
     }
     
     #mobile-menu.active {
-      max-height: 400px;
+      max-height: 500px;
     }
 
     /* 🍔 Animation hamburger */
@@ -85,7 +85,7 @@
 <body class="bg-gray-50 text-gray-900 overflow-x-hidden">
 
   <!-- 🧊 Navbar dynamique -->
-  <header id="navbar" class="fixed top-0 right-0 w-full z-50 transition-all duration-500 bg-transparent text-white">
+  <header id="navbar" class="fixed top-0 right-0 left-0 w-full z-50 transition-all duration-500">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-5 py-4">
       <div class="flex items-center space-x-2 space-x-reverse">
         <img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" alt="לוגו" class="w-8 h-8 md:w-10 md:h-10">
@@ -120,48 +120,48 @@
   </header>
 
   <!-- 🌤 Section principale -->
-  <section class="animated-bg min-h-screen flex flex-col justify-center items-center text-center text-white relative">
+  <section class="animated-bg min-h-screen flex flex-col justify-center items-center text-center text-white relative px-4">
     <div class="absolute inset-0 bg-black/40"></div>
-    <div class="relative z-10 px-5 max-w-2xl" data-aos="fade-up">
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-6">ירמיהו מיזוג אוויר</h1>
-      <p class="text-base md:text-xl mb-8">
+    <div class="relative z-10 px-5 max-w-2xl w-full" data-aos="fade-up">
+      <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 md:mb-6 leading-tight">מומחה למיזוג אוויר</h1>
+      <p class="text-sm sm:text-base md:text-xl mb-6 md:mb-8 leading-relaxed">
         התקנה, תחזוקה ותיקון של כל סוגי מערכות המיזוג – לנוחות מושלמת בכל עונה.
       </p>
-      <a href="#contact" class="bg-white text-blue-700 px-6 md:px-8 py-3 rounded-full font-semibold hover:bg-blue-100 shadow-lg">
+      <a href="#contact" class="inline-block bg-white text-blue-700 px-6 md:px-8 py-3 rounded-full font-semibold hover:bg-blue-100 shadow-lg text-sm md:text-base">
         בקש הצעת מחיר
       </a>
     </div>
   </section>
 
   <!-- 🧰 שירותים -->
-  <section id="services" class="py-20 bg-gray-100 text-center">
+  <section id="services" class="py-16 md:py-20 bg-gray-100 text-center">
     <div class="max-w-6xl mx-auto px-5">
-      <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-12" data-aos="fade-down">השירותים שלנו</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-3xl shadow-lg hover:-translate-y-2" data-aos="fade-up">
-          <div class="text-6xl mb-6">🔧</div>
-          <h3 class="text-xl font-semibold mb-3">התקנה</h3>
-          <p class="text-gray-600">התקנת מערכות מיזוג מתקדמות, מיני מרכזי, מפוצל ועוד.</p>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-700 mb-8 md:mb-12" data-aos="fade-down">השירותים שלנו</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-lg hover:-translate-y-2" data-aos="fade-up">
+          <div class="text-5xl md:text-6xl mb-4 md:mb-6">🔧</div>
+          <h3 class="text-lg md:text-xl font-semibold mb-2 md:mb-3">התקנה</h3>
+          <p class="text-sm md:text-base text-gray-600">התקנת מערכות מיזוג מתקדמות, מיני מרכזי, מפוצל ועוד.</p>
         </div>
-        <div class="bg-white p-8 rounded-3xl shadow-lg hover:-translate-y-2" data-aos="fade-up" data-aos-delay="150">
-          <div class="text-6xl mb-6">🧹</div>
-          <h3 class="text-xl font-semibold mb-3">תחזוקה</h3>
-          <p class="text-gray-600">ניקוי יסודי ובדיקה מקיפה לשמירה על יעילות המערכת.</p>
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-lg hover:-translate-y-2" data-aos="fade-up" data-aos-delay="150">
+          <div class="text-5xl md:text-6xl mb-4 md:mb-6">🧹</div>
+          <h3 class="text-lg md:text-xl font-semibold mb-2 md:mb-3">תחזוקה</h3>
+          <p class="text-sm md:text-base text-gray-600">ניקוי יסודי ובדיקה מקיפה לשמירה על יעילות המערכת.</p>
         </div>
-        <div class="bg-white p-8 rounded-3xl shadow-lg hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
-          <div class="text-6xl mb-6">⚙️</div>
-          <h3 class="text-xl font-semibold mb-3">תיקון</h3>
-          <p class="text-gray-600">שירות תיקונים מהיר לכל סוגי המזגנים, עם חלקים מקוריים בלבד.</p>
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-lg hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-5xl md:text-6xl mb-4 md:mb-6">⚙️</div>
+          <h3 class="text-lg md:text-xl font-semibold mb-2 md:mb-3">תיקון</h3>
+          <p class="text-sm md:text-base text-gray-600">שירות תיקונים מהיר לכל סוגי המזגנים, עם חלקים מקוריים בלבד.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 💰 מחירון -->
-  <section id="pricing" class="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+  <section id="pricing" class="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-blue-100">
     <div class="max-w-6xl mx-auto px-5">
-      <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-4 text-center" data-aos="fade-down">מחירון שירותים</h2>
-      <p class="text-gray-600 text-center mb-12 text-lg">מחירים שקופים והוגנים - ללא הפתעות</p>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-700 mb-3 md:mb-4 text-center" data-aos="fade-down">מחירון שירותים</h2>
+      <p class="text-gray-600 text-center mb-8 md:mb-12 text-base md:text-lg">מחירים שקופים והוגנים - ללא הפתעות</p>
       
       <div class="grid md:grid-cols-2 gap-8">
         <!-- התקנות -->
@@ -257,11 +257,11 @@
   </section>
 
   <!-- 👨‍🔧 אודות -->
-  <section id="about" class="py-20 bg-gradient-to-r from-blue-700 to-blue-500 text-white text-center">
+  <section id="about" class="py-16 md:py-20 bg-gradient-to-r from-blue-700 to-blue-500 text-white text-center">
     <div class="max-w-5xl mx-auto px-5">
-      <h2 class="text-3xl md:text-4xl font-bold mb-10" data-aos="fade-right">אודות</h2>
-      <div class="bg-white/10 p-8 md:p-12 rounded-3xl shadow-xl" data-aos="fade-up">
-        <p class="text-base md:text-lg leading-relaxed">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-10" data-aos="fade-right">אודות</h2>
+      <div class="bg-white/10 p-6 md:p-12 rounded-3xl shadow-xl" data-aos="fade-up">
+        <p class="text-sm sm:text-base md:text-lg leading-relaxed">
           עם ניסיון של למעלה מ-10 שנים, קלימפרו מספקת פתרונות מיזוג מתקדמים ללקוחות פרטיים ועסקיים.
           <br><br>
           אנו מתמחים בהתקנות, תיקונים ותחזוקה שוטפת של מערכות מיזוג מכל הסוגים, עם דגש על אמינות, יעילות וחיסכון באנרגיה.
@@ -271,9 +271,9 @@
   </section>
 
   <!-- 📞 צור קשר -->
-  <section id="contact" class="py-20 bg-gray-100 text-center">
+  <section id="contact" class="py-16 md:py-20 bg-gray-100 text-center">
     <div class="max-w-5xl mx-auto px-5">
-      <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-10" data-aos="fade-down">צור קשר</h2>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-700 mb-6 md:mb-10" data-aos="fade-down">צור קשר</h2>
       
       <!-- Message de succès -->
       <div id="success-message" class="hidden max-w-lg mx-auto bg-green-100 border-2 border-green-500 text-green-700 p-4 rounded-lg mb-6">
@@ -337,7 +337,7 @@
         <div class="bg-white p-6 rounded-2xl shadow-md" data-aos="fade-up">
           <div class="text-4xl mb-3">📞</div>
           <h3 class="font-bold text-lg mb-2">טלפון</h3>
-          <a href="tel:+972542596213" class="text-blue-600 hover:underline">054-259-6213</a>
+          <a href="tel:+972501234567" class="text-blue-600 hover:underline">050-123-4567</a>
         </div>
         
         <div class="bg-white p-6 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="150">
@@ -357,11 +357,11 @@
 
   <!-- ⚙️ פוטר -->
   <footer class="animated-bg text-white text-center py-8 px-4">
-    <p class="text-sm md:text-lg">© 2025 קלימפרו — ירמיהו מיזוג אוויר. כל הזכויות שמורות.</p>
+    <p class="text-sm md:text-lg">© 2025 קלימפרו — מומחה למיזוג אוויר. כל הזכויות שמורות.</p>
   </footer>
 
   <!-- 💬 WhatsApp -->
-  <a href="https://wa.me/972542596213" target="_blank" class="whatsapp-float" title="דבר איתי בוואטסאפ">💬</a>
+  <a href="https://wa.me/972501234567" target="_blank" class="whatsapp-float" title="דבר איתי בוואטסאפ">💬</a>
 
   <!-- 🧠 JS -->
   <script>
