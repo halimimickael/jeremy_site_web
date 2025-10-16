@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>קלימפרו | ירמיהו מיזוג אוויר</title>
+
+  <!-- ✅ Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ AOS (Animation on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    /* 🌈 Dégradé animé */
+    .animated-bg {
+      background: linear-gradient(120deg, #0ea5e9, #3b82f6, #6366f1);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* 💬 WhatsApp bouton */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      z-index: 50;
+      transition: transform 0.3s ease;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+
+    /* ✨ Scroll fluide */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* 📱 Menu mobile moderne */
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
+    }
+    
+    #mobile-menu.active {
+      max-height: 400px;
+    }
+
+    /* 🍔 Animation hamburger */
+    .hamburger-line {
+      transition: all 0.3s ease;
+    }
+    
+    #menu-btn.active .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    #menu-btn.active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+    
+    #menu-btn.active .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    * { transition: all 0.3s ease; }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+
+  <!-- 🧊 Navbar dynamique -->
+  <header id="navbar" class="fixed top-0 right-0 w-full z-50 transition-all duration-500 bg-transparent text-white">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-5 py-4">
+      <div class="flex items-center space-x-2 space-x-reverse">
+        <img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" alt="לוגו" class="w-8 h-8 md:w-10 md:h-10">
+        <span class="text-xl md:text-2xl font-bold">קלימ<span class="text-blue-400">פרו</span></span>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-lg font-medium">
+        <a href="#services" class="nav-link hover:text-blue-400">שירותים</a>
+        <a href="#pricing" class="nav-link hover:text-blue-400">מחירון</a>
+        <a href="#about" class="nav-link hover:text-blue-400">אודות</a>
+        <a href="#contact" class="nav-link hover:text-blue-400">צור קשר</a>
+        <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-500 shadow-md">הצעת מחיר</a>
+      </nav>
+
+      <button id="menu-btn" class="md:hidden flex flex-col space-y-1.5 z-50">
+        <span class="hamburger-line block w-7 h-[3px] bg-current rounded-full"></span>
+        <span class="hamburger-line block w-7 h-[3px] bg-current rounded-full"></span>
+        <span class="hamburger-line block w-7 h-[3px] bg-current rounded-full"></span>
+      </button>
+    </div>
+
+    <!-- תפריט נייד מודרני -->
+    <div id="mobile-menu" class="md:hidden bg-gradient-to-b from-blue-700 to-blue-800 backdrop-blur-xl">
+      <div class="flex flex-col items-center py-4 space-y-1">
+        <a href="#services" class="mobile-link w-full text-center py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10">שירותים</a>
+        <a href="#pricing" class="mobile-link w-full text-center py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10">מחירון</a>
+        <a href="#about" class="mobile-link w-full text-center py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10">אודות</a>
+        <a href="#contact" class="mobile-link w-full text-center py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10">צור קשר</a>
+        <a href="#contact" class="mobile-link bg-white text-blue-600 font-semibold px-8 py-3 rounded-full my-4 hover:bg-gray-100 shadow-lg">הצעת מחיר</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🌤 Section principale -->
+  <section class="animated-bg min-h-screen flex flex-col justify-center items-center text-center text-white relative">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 px-5 max-w-2xl" data-aos="fade-up">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-6">ירמיהו מיזוג אוויר</h1>
+      <p class="text-base md:text-xl mb-8">
+        התקנה, תחזוקה ותיקון של כל סוגי מערכות המיזוג – לנוחות מושלמת בכל עונה.
+      </p>
+      <a href="#contact" class="bg-white text-blue-700 px-6 md:px-8 py-3 rounded-full font-semibold hover:bg-blue-100 shadow-lg">
+        בקש הצעת מחיר
+      </a>
+    </div>
+  </section>
+
+  <!-- 🧰 שירותים -->
+  <section id="services" class="py-20 bg-gray-100 text-center">
+    <div class="max-w-6xl mx-auto px-5">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-12" data-aos="fade-down">השירותים שלנו</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-3xl shadow-lg hover:-translate-y-2" data-aos="fade-up">
+          <div class="text-6xl mb-6">🔧</div>
+          <h3 class="text-xl font-semibold mb-3">התקנה</h3>
+          <p class="text-gray-600">התקנת מערכות מיזוג מתקדמות, מיני מרכזי, מפוצל ועוד.</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-lg hover:-translate-y-2" data-aos="fade-up" data-aos-delay="150">
+          <div class="text-6xl mb-6">🧹</div>
+          <h3 class="text-xl font-semibold mb-3">תחזוקה</h3>
+          <p class="text-gray-600">ניקוי יסודי ובדיקה מקיפה לשמירה על יעילות המערכת.</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-lg hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-6xl mb-6">⚙️</div>
+          <h3 class="text-xl font-semibold mb-3">תיקון</h3>
+          <p class="text-gray-600">שירות תיקונים מהיר לכל סוגי המזגנים, עם חלקים מקוריים בלבד.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💰 מחירון -->
+  <section id="pricing" class="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+    <div class="max-w-6xl mx-auto px-5">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-4 text-center" data-aos="fade-down">מחירון שירותים</h2>
+      <p class="text-gray-600 text-center mb-12 text-lg">מחירים שקופים והוגנים - ללא הפתעות</p>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- התקנות -->
+        <div class="bg-white rounded-3xl shadow-xl p-8" data-aos="fade-up">
+          <div class="flex items-center mb-6">
+            <div class="bg-blue-100 p-4 rounded-2xl ml-4">
+              <img src="https://cdn-icons-png.flaticon.com/512/481/481188.png" alt="התקנה" class="w-12 h-12">
+            </div>
+            <h3 class="text-2xl font-bold text-blue-700">התקנות</h3>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+              <span class="text-gray-700">מזגן מפוצל 1 כ"ס</span>
+              <span class="font-bold text-blue-600">₪1,800</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+              <span class="text-gray-700">מזגן מפוצל 1.5 כ"ס</span>
+              <span class="font-bold text-blue-600">₪2,200</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+              <span class="text-gray-700">מזגן מפוצל 2 כ"ס</span>
+              <span class="font-bold text-blue-600">₪2,600</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+              <span class="text-gray-700">מיני מרכזי 3 יחידות</span>
+              <span class="font-bold text-blue-600">₪8,500</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700">מיני מרכזי 5 יחידות</span>
+              <span class="font-bold text-blue-600">₪12,800</span>
+            </div>
+          </div>
+          
+          <p class="text-sm text-gray-500 mt-6">* המחיר כולל התקנה סטנדרטית עד 5 מטר צנרת</p>
+        </div>
+
+        <!-- תיקונים ותחזוקה -->
+        <div class="bg-white rounded-3xl shadow-xl p-8" data-aos="fade-up" data-aos-delay="150">
+          <div class="flex items-center mb-6">
+            <div class="bg-green-100 p-4 rounded-2xl ml-4">
+              <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="תיקון" class="w-12 h-12">
+            </div>
+            <h3 class="text-2xl font-bold text-green-700">תיקונים ותחזוקה</h3>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+              <span class="text-gray-700">טיפול ושירות שנתי</span>
+              <span class="font-bold text-green-600">₪280</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+              <span class="text-gray-700">ניקוי יסודי + גז</span>
+              <span class="font-bold text-green-600">₪450</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+              <span class="text-gray-700">תיקון דליפת גז</span>
+              <span class="font-bold text-green-600">₪600</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-200 pb-3">
+              <span class="text-gray-700">החלפת מדחס</span>
+              <span class="font-bold text-green-600">₪1,400</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-gray-700">תיקון כרטיס אלקטרוני</span>
+              <span class="font-bold text-green-600">₪550</span>
+            </div>
+          </div>
+          
+          <p class="text-sm text-gray-500 mt-6">* מחירי התיקונים כוללים אבחון + עבודה</p>
+        </div>
+      </div>
+
+      <!-- הערות נוספות -->
+      <div class="bg-blue-600 text-white rounded-3xl p-8 mt-8 text-center" data-aos="fade-up">
+        <h4 class="text-2xl font-bold mb-4">🎁 מבצעים מיוחדים</h4>
+        <div class="grid md:grid-cols-3 gap-6 text-right md:text-center">
+          <div>
+            <p class="text-3xl font-bold mb-2">10%</p>
+            <p class="text-blue-100">הנחה להתקנת 3 מזגנים ומעלה</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold mb-2">₪200</p>
+            <p class="text-blue-100">הנחה לחוזה תחזוקה שנתי</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold mb-2">24/7</p>
+            <p class="text-blue-100">שירות חירום זמין תמיד</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 👨‍🔧 אודות -->
+  <section id="about" class="py-20 bg-gradient-to-r from-blue-700 to-blue-500 text-white text-center">
+    <div class="max-w-5xl mx-auto px-5">
+      <h2 class="text-3xl md:text-4xl font-bold mb-10" data-aos="fade-right">אודות</h2>
+      <div class="bg-white/10 p-8 md:p-12 rounded-3xl shadow-xl" data-aos="fade-up">
+        <p class="text-base md:text-lg leading-relaxed">
+          עם ניסיון של למעלה מ-10 שנים, קלימפרו מספקת פתרונות מיזוג מתקדמים ללקוחות פרטיים ועסקיים.
+          <br><br>
+          אנו מתמחים בהתקנות, תיקונים ותחזוקה שוטפת של מערכות מיזוג מכל הסוגים, עם דגש על אמינות, יעילות וחיסכון באנרגיה.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📞 צור קשר -->
+  <section id="contact" class="py-20 bg-gray-100 text-center">
+    <div class="max-w-5xl mx-auto px-5">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-10" data-aos="fade-down">צור קשר</h2>
+      
+      <!-- Message de succès -->
+      <div id="success-message" class="hidden max-w-lg mx-auto bg-green-100 border-2 border-green-500 text-green-700 p-4 rounded-lg mb-6">
+        ✅ ההודעה נשלחה בהצלחה! נחזור אליך בהקדם.
+      </div>
+      
+      <!-- Message d'erreur -->
+      <div id="error-message" class="hidden max-w-lg mx-auto bg-red-100 border-2 border-red-500 text-red-700 p-4 rounded-lg mb-6">
+        ❌ שגיאה בשליחה. נסה שוב או צור קשר בטלפון.
+      </div>
+      
+      <form id="contact-form" class="max-w-lg mx-auto bg-white p-8 md:p-10 rounded-3xl shadow-xl space-y-5" data-aos="zoom-in">
+        <input 
+          type="text" 
+          name="name" 
+          placeholder="שם מלא *" 
+          required
+          class="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none text-right">
+        
+        <input 
+          type="tel" 
+          name="phone" 
+          placeholder="טלפון *" 
+          required
+          class="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none text-right">
+        
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="אימייל" 
+          class="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none text-right">
+        
+        <select 
+          name="service" 
+          class="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none text-right">
+          <option value="">בחר שירות</option>
+          <option value="installation">התקנת מזגן</option>
+          <option value="repair">תיקון מזגן</option>
+          <option value="maintenance">תחזוקה</option>
+          <option value="consultation">ייעוץ</option>
+        </select>
+        
+        <textarea 
+          name="message" 
+          placeholder="הודעה *" 
+          rows="5" 
+          required
+          class="w-full border border-gray-300 p-3 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none text-right"></textarea>
+        
+        <button 
+          type="submit" 
+          id="submit-btn"
+          class="bg-blue-600 text-white w-full py-3 rounded-lg font-semibold hover:bg-blue-700 transition flex items-center justify-center">
+          <span id="btn-text">שלח הודעה</span>
+          <span id="btn-loading" class="hidden">שולח...</span>
+        </button>
+      </form>
+      
+      <!-- Informations de contact supplémentaires -->
+      <div class="mt-12 grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-2xl shadow-md" data-aos="fade-up">
+          <div class="text-4xl mb-3">📞</div>
+          <h3 class="font-bold text-lg mb-2">טלפון</h3>
+          <a href="tel:+972542596213" class="text-blue-600 hover:underline">054-259-6213</a>
+        </div>
+        
+        <div class="bg-white p-6 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="150">
+          <div class="text-4xl mb-3">📧</div>
+          <h3 class="font-bold text-lg mb-2">אימייל</h3>
+          <a href="mailto:info@climpro.co.il" class="text-blue-600 hover:underline">info@climpro.co.il</a>
+        </div>
+        
+        <div class="bg-white p-6 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-4xl mb-3">⏰</div>
+          <h3 class="font-bold text-lg mb-2">שעות פעילות</h3>
+          <p class="text-gray-600">ראשון-חמישי: 8:00-18:00<br>שישי: 8:00-14:00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚙️ פוטר -->
+  <footer class="animated-bg text-white text-center py-8 px-4">
+    <p class="text-sm md:text-lg">© 2025 קלימפרו — ירמיהו מיזוג אוויר. כל הזכויות שמורות.</p>
+  </footer>
+
+  <!-- 💬 WhatsApp -->
+  <a href="https://wa.me/972542596213" target="_blank" class="whatsapp-float" title="דבר איתי בוואטסאפ">💬</a>
+
+  <!-- 🧠 JS -->
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    const navbar = document.getElementById('navbar');
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    // Toggle menu mobile avec animation
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      menuBtn.classList.toggle('active');
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        menuBtn.classList.remove('active');
+      });
+    });
+
+    // 💡 Navbar dynamique au scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.classList.remove('bg-transparent', 'text-white');
+        navbar.classList.add('bg-white', 'text-gray-800', 'shadow-lg', 'backdrop-blur-md');
+      } else {
+        navbar.classList.add('bg-transparent', 'text-white');
+        navbar.classList.remove('bg-white', 'text-gray-800', 'shadow-lg', 'backdrop-blur-md');
+      }
+    });
+
+    // 📧 Gestion du formulaire de contact avec EmailJS
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnLoading = document.getElementById('btn-loading');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Afficher le loading
+      btnText.classList.add('hidden');
+      btnLoading.classList.remove('hidden');
+      submitBtn.disabled = true;
+      
+      // Cacher les messages précédents
+      successMessage.classList.add('hidden');
+      errorMessage.classList.add('hidden');
+      
+      // Récupérer les données du formulaire
+      const formData = new FormData(contactForm);
+      const data = {
+        name: formData.get('name'),
+        phone: formData.get('phone'),
+        email: formData.get('email'),
+        service: formData.get('service'),
+        message: formData.get('message')
+      };
+      
+      try {
+        // Ajouter la clé Web3Forms et l'email de destination
+        data.access_key = "TU_DOIS_OBTENIR_UNE_CLE_GRATUITE";
+        data.subject = "הודעה חדשה מאתר קלימפרו";
+        data.from_name = data.name;
+        
+        // Envoyer via Web3Forms
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+          // Succès
+          successMessage.classList.remove('hidden');
+          contactForm.reset();
+          
+          // Masquer le message après 5 secondes
+          setTimeout(() => {
+            successMessage.classList.add('hidden');
+          }, 5000);
+        } else {
+          throw new Error('Erreur serveur');
+        }
+      } catch (error) {
+        // Erreur
+        errorMessage.classList.remove('hidden');
+        
+        // Masquer le message après 5 secondes
+        setTimeout(() => {
+          errorMessage.classList.add('hidden');
+        }, 5000);
+      } finally {
+        // Réactiver le bouton
+        btnText.classList.remove('hidden');
+        btnLoading.classList.add('hidden');
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
