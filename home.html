@@ -65,15 +65,38 @@
       scroll-behavior: smooth;
     }
 
-    /* 📱 Menu mobile moderne */
+    /* 📱 Menu sidebar moderne */
     #mobile-menu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease-in-out;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      transition: right 0.4s ease-in-out;
+      z-index: 100;
     }
     
     #mobile-menu.active {
-      max-height: 500px;
+      right: 0;
+    }
+
+    /* Overlay sombre */
+    #menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 99;
+    }
+
+    #menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
     }
 
     /* 🍔 Animation hamburger */
@@ -139,14 +162,50 @@
       </button>
     </div>
 
-    <!-- תפריט נייד מודרני -->
-    <div id="mobile-menu" class="md:hidden bg-gradient-to-b from-blue-700 to-blue-800 backdrop-blur-xl">
-      <div class="flex flex-col items-center py-4 space-y-1">
-        <a href="#services" class="mobile-link w-full text-center py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10">שירותים</a>
-        <a href="#pricing" class="mobile-link w-full text-center py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10">מחירון</a>
-        <a href="#about" class="mobile-link w-full text-center py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10">אודות</a>
-        <a href="#contact" class="mobile-link w-full text-center py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10">צור קשר</a>
-        <a href="#contact" class="mobile-link bg-white text-blue-600 font-semibold px-8 py-3 rounded-full my-4 hover:bg-gray-100 shadow-lg">הצעת מחיר</a>
+    <!-- תפריט נייד מודרני - Sidebar -->
+    <div id="menu-overlay"></div>
+    <div id="mobile-menu" class="md:hidden bg-gradient-to-b from-blue-700 to-blue-800 shadow-2xl">
+      <div class="flex flex-col h-full">
+        <!-- En-tête du menu -->
+        <div class="p-6 border-b border-white/20">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2 space-x-reverse">
+              <img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" alt="לוגו" class="w-8 h-8">
+              <span class="text-lg font-bold text-white">ירמיהו מיזוג אוויר</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Menu links -->
+        <div class="flex flex-col flex-1 py-4 overflow-y-auto">
+          <a href="#services" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">
+            <span class="mr-3">🔧</span> שירותים
+          </a>
+          <a href="#pricing" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">
+            <span class="mr-3">💰</span> מחירון
+          </a>
+          <a href="#about" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">
+            <span class="mr-3">👨‍🔧</span> אודות
+          </a>
+          <a href="#contact" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">
+            <span class="mr-3">📞</span> צור קשר
+          </a>
+          
+          <!-- Bouton CTA -->
+          <div class="px-6 mt-6">
+            <a href="#contact" class="mobile-link block text-center bg-white text-blue-600 font-semibold px-6 py-4 rounded-full hover:bg-gray-100 shadow-lg transition-all">
+              הצעת מחיר מהירה
+            </a>
+          </div>
+        </div>
+        
+        <!-- Footer du menu -->
+        <div class="p-6 border-t border-white/20">
+          <div class="text-center text-white/80 text-sm">
+            <p class="mb-2">📞 054-259-6213</p>
+            <p>⏰ ראשון-חמישי: 8:00-18:00</p>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -167,7 +226,8 @@
     <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
       <img src="images/climatisation.png" 
            alt="טכנאי מזגן" 
-           class="w-48 sm:w-56 md:w-80 h-auto drop-shadow-2xl animate-float" />
+           class="w-48 sm:w-56 md:w-80 h-auto drop-shadow-2xl animate-float" 
+           style="opacity: 1 !important;" />
     </div>
 </div>
   </section>
@@ -412,22 +472,35 @@
     const navbar = document.getElementById('navbar');
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
     // Initialiser la navbar comme transparente
     navbar.classList.add('bg-transparent', 'text-white');
 
-    // Toggle menu mobile avec animation
+    // Toggle menu sidebar avec animation
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
       menuBtn.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Fermer le menu avec l'overlay
+    menuOverlay.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      menuBtn.classList.remove('active');
+      document.body.style.overflow = '';
     });
 
     // Fermer le menu quand on clique sur un lien
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
         menuBtn.classList.remove('active');
+        document.body.style.overflow = '';
       });
     });
 
