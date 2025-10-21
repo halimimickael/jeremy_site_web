@@ -143,7 +143,7 @@
   <header id="navbar" class="fixed top-0 right-0 left-0 w-full z-50 transition-all duration-500">
     <div class="w-full max-w-7xl mx-auto flex items-center justify-between px-5 py-4">
       <div class="flex items-center space-x-2 space-x-reverse">
-        <img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" alt="לוגו" class="w-8 h-8 md:w-10 md:h-10">
+        <!-- <img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" alt="לוגו" class="w-8 h-8 md:w-10 md:h-10"> -->
         <span class="text-xl md:text-2xl font-bold">ירמיהו <span class="text-blue-400">מיזוג אוויר</span></span>
       </div>
 
@@ -170,7 +170,7 @@
         <div class="p-6 border-b border-white/20">
           <div class="flex items-center justify-between">
             <div class="flex items-center space-x-2 space-x-reverse">
-              <img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" alt="לוגו" class="w-8 h-8">
+              <!-- <img src="https://cdn-icons-png.flaticon.com/512/1684/1684375.png" alt="לוגו" class="w-8 h-8"> -->
               <span class="text-lg font-bold text-white">ירמיהו מיזוג אוויר</span>
             </div>
           </div>
@@ -211,26 +211,42 @@
   </header>
 
   <!-- 🌤 Section principale -->
-  <section class="animated-bg min-h-screen w-full flex flex-col justify-center items-center text-center text-white relative px-4">
-    <div class="absolute inset-0 bg-black/40 w-full"></div>
-    <div class="relative z-10 flex flex-col md:flex-row items-center justify-center max-w-5xl mx-auto px-5">
-    <div class="text-center md:text-right md:w-1/2 mt-[25%] md:mt-[15%]">
-        <h1 class="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 md:mb-6 leading-tight">ירמיהו מיזוג אוויר</h1>
-        <p class="text-sm sm:text-base md:text-xl mb-6 md:mb-8 leading-relaxed">
+ <section 
+  class="relative w-full min-h-[60vh] sm:min-h-[70vh] md:h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center" 
+  style="background-image: url('images/couv.jpeg');"
+>
+  <!-- Overlay sombre -->
+<div class="absolute inset-0 bg-black/40 w-full"></div>
+  <!-- Contenu principal -->
+  <div class="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6">
+    
+    <!-- Texte -->
+    <div class="text-center md:text-right mt-24 md:mt-0 text-white">
+      <h1 class="text-3xl sm:text-4xl md:text-6xl text-lg font-bold text-white mb-4 md:mb-6 leading-tight">
+        ירמיהו מיזוג אוויר
+      </h1>
+      <p class="text-sm sm:text-base md:text-2xl mb-6 md:mb-8 leading-relaxed">
         התקנה, תחזוקה ותיקון של כל סוגי מערכות המיזוג – לנוחות מושלמת בכל עונה.
-        </p>
-        <a href="#contact" class="inline-block bg-white text-blue-700 px-6 md:px-8 py-3 rounded-full font-semibold hover:bg-blue-100 shadow-lg text-sm md:text-base">
+      </p>
+      <a 
+        href="#contact" 
+        class="inline-block bg-white text-blue-700 px-6 md:px-8 py-3 rounded-full font-semibold hover:bg-blue-100 shadow-lg text-sm md:text-base transition-all"
+      >
         בקש הצעת מחיר
-        </a>
+      </a>
     </div>
-    <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
-      <img src="images/climatisation.png" 
-           alt="טכנאי מזגן" 
-           class="w-48 sm:w-56 md:w-80 h-auto drop-shadow-2xl animate-float" 
-           style="opacity: 1 !important;" />
-    </div>
-</div>
-  </section>
+
+    <!-- Image
+    <div class="md:w-1/2 flex justify-center mt-10 md:mt-0">
+      <img 
+        src="images/climatisation.png" 
+        alt="טכנאי מזגן" 
+        class="w-56 sm:w-72 md:w-[28rem] lg:w-[36rem] h-auto drop-shadow-2xl animate-float"
+      />
+    </div> -->
+
+  </div>
+</section>
 
   <!-- 🧰 שירותים -->
   <section id="services" class="py-16 md:py-20 bg-gray-100 text-center">
@@ -260,13 +276,14 @@
   </section>
 
   <!-- 💰 מחירון -->
+   <!--
   <section id="pricing" class="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-blue-100">
     <div class="max-w-6xl mx-auto px-5">
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-700 mb-3 md:mb-4 text-center" data-aos="fade-down">מחירון שירותים</h2>
       <p class="text-gray-600 text-center mb-8 md:mb-12 text-base md:text-lg">מחירים שקופים והוגנים - ללא הפתעות</p>
       
       <div class="grid md:grid-cols-2 gap-8">
-        <!-- התקנות -->
+        // התקנות 
         <div id="installation" class="bg-white rounded-3xl shadow-xl p-8 scroll-mt-24" data-aos="fade-up">
           <div class="flex items-center mb-6">
             <div class="bg-blue-100 p-4 rounded-2xl ml-4">
@@ -301,7 +318,7 @@
           <p class="text-sm text-gray-500 mt-6">* המחיר כולל התקנה סטנדרטית עד 5 מטר צנרת</p>
         </div>
 
-        <!-- תיקונים ותחזוקה -->
+        //-- תיקונים ותחזוקה 
         <div id="repair" class="bg-white rounded-3xl shadow-xl p-8 scroll-mt-24" data-aos="fade-up" data-aos-delay="150">
           <div class="flex items-center mb-6">
             <div class="bg-green-100 p-4 rounded-2xl ml-4">
@@ -313,7 +330,7 @@
           <div class="space-y-4">
             <div id="maintenance" class="flex justify-between items-center border-b border-gray-200 pb-3">
               <span class="text-gray-700">טיפול ושירות שנתי</span>
-              <span class="font-bold text-green-600">₪280</span>
+              <span class="font-bold text-green-600">₪280</span> 
             </div>
             <div class="flex justify-between items-center border-b border-gray-200 pb-3">
               <span class="text-gray-700">ניקוי יסודי + גז</span>
@@ -337,7 +354,7 @@
         </div>
       </div>
 
-      <!-- הערות נוספות -->
+      // הערות נוספות 
       <div class="bg-blue-600 text-white rounded-3xl p-8 mt-8 text-center" data-aos="fade-up">
         <h4 class="text-2xl font-bold mb-4">🎁 מבצעים מיוחדים</h4>
         <div class="grid md:grid-cols-3 gap-6 text-right md:text-center">
@@ -354,6 +371,86 @@
             <p class="text-blue-100">שירות חירום זמין תמיד</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>  -->
+
+  <!-- 🖼️ גלריה -->
+  <section id="pricing" class="py-16 md:py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+    <div class="max-w-6xl mx-auto px-5">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-700 mb-3 md:mb-4 text-center" data-aos="fade-down">הפרויקטים שלנו</h2>
+      <p class="text-gray-600 text-center mb-8 md:mb-12 text-base md:text-lg">צפו בעבודות שביצענו ללקוחותינו המרוצים</p>
+      
+      <!-- Grid Gallery -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 aspect-square" data-aos="fade-up">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=600&fit=crop" alt="מזגן מסחרי" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <div class="text-white">
+              <h3 class="font-bold text-lg mb-1">התקנת מזגן מפוצל</h3>
+              <p class="text-sm text-gray-200">תל אביב</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 aspect-square" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=600&fit=crop" alt="מזגן מסחרי" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <div class="text-white">
+              <h3 class="font-bold text-lg mb-1">מערכת מיני מרכזי</h3>
+              <p class="text-sm text-gray-200">ירושלים</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 aspect-square" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=600&fit=crop" alt="מזגן מסחרי" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <div class="text-white">
+              <h3 class="font-bold text-lg mb-1">תחזוקה שנתית</h3>
+              <p class="text-sm text-gray-200">חיפה</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 aspect-square" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=600&fit=crop" alt="מזגן מסחרי" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <div class="text-white">
+              <h3 class="font-bold text-lg mb-1">פרויקט מסחרי</h3>
+              <p class="text-sm text-gray-200">רמת גן</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 aspect-square" data-aos="fade-up" data-aos-delay="400">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=600&fit=crop" alt="מזגן מסחרי" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <div class="text-white">
+              <h3 class="font-bold text-lg mb-1">התקנת יחידות חיצוניות</h3>
+              <p class="text-sm text-gray-200">פתח תקווה</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 aspect-square" data-aos="fade-up" data-aos-delay="500">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=600&fit=crop" alt="מזגן מסחרי" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+            <div class="text-white">
+              <h3 class="font-bold text-lg mb-1">מזגן בעיצוב מודרני</h3>
+              <p class="text-sm text-gray-200">הרצליה</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Box -->
+      <div class="bg-blue-600 text-white rounded-3xl p-8 mt-12 text-center" data-aos="fade-up">
+        <h4 class="text-2xl font-bold mb-4">💼 רוצה לראות עוד פרויקטים?</h4>
+        <p class="text-blue-100 mb-6 text-lg">צור איתנו קשר לקבלת תיק עבודות מלא ומידע נוסף על השירותים שלנו</p>
+        <a href="#contact" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 shadow-lg transition-all">
+          צור קשר עכשיו
+        </a>
       </div>
     </div>
   </section>
