@@ -203,69 +203,64 @@
 <body class="bg-gray-50 text-gray-900 overflow-x-hidden m-0 p-0">
 
   <!-- 🧊 Navbar dynamique -->
-  <header id="navbar" class="fixed top-0 right-0 left-0 w-full z-50 transition-all duration-500">
-    <div class="w-full max-w-7xl mx-auto flex items-center justify-between px-5 py-4">
-      <div class="flex items-center space-x-2 space-x-reverse">
-        <span class="text-xl md:text-2xl font-bold">ירמיהו <span class="text-blue-400">מיזוג אוויר</span></span>
-      </div>
-
-      <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-lg font-medium">
-        <a href="#services" class="nav-link hover:text-blue-400">שירותים</a>
-        <a href="#pricing" class="nav-link hover:text-blue-400">גלריה</a>
-        <a href="#about" class="nav-link hover:text-blue-400">אודות</a>
-        <a href="#contact" class="nav-link hover:text-blue-400">צור קשר</a>
-        <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-500 shadow-md">הצעת מחיר</a>
-      </nav>
-
-      <button id="menu-btn" class="md:hidden flex flex-col space-y-1.5 z-50">
-        <span class="hamburger-line block w-7 h-[3px] bg-current rounded-full"></span>
-        <span class="hamburger-line block w-7 h-[3px] bg-current rounded-full"></span>
-        <span class="hamburger-line block w-7 h-[3px] bg-current rounded-full"></span>
-      </button>
+  <!-- 🧊 Navbar dynamique -->
+<header id="navbar" class="fixed top-0 right-0 left-0 w-full z-50 transition-all duration-500">
+  <div class="w-full max-w-7xl mx-auto flex items-center justify-between px-5 py-4">
+    <div class="flex items-center space-x-2 space-x-reverse">
+      <span class="text-xl md:text-2xl font-bold">ירמיהו <span class="text-blue-400">מיזוג אוויר</span></span>
     </div>
 
-    <!-- תפריט נייד מודרני - Sidebar -->
-    <div id="menu-overlay"></div>
-    <div id="mobile-menu" class="md:hidden bg-gradient-to-b from-blue-700 to-blue-800 shadow-2xl">
-      <div class="flex flex-col h-full">
-        <div class="p-6 border-b border-white/20">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-2 space-x-reverse">
-              <span class="text-lg font-bold text-white">ירמיהו מיזוג אוויר</span>
-            </div>
-          </div>
+    <!-- Navbar desktop -->
+    <nav class="hidden md:flex items-center space-x-8 space-x-reverse text-lg font-medium">
+      <a href="#services" class="nav-link hover:text-blue-400">שירותים</a>
+      <a href="#pricing" class="nav-link hover:text-blue-400">גלריה</a>
+      <a href="#reviews" class="nav-link hover:text-blue-400">חוות דעת</a>
+      <a href="#midrag" class="nav-link hover:text-blue-400">מידרג</a>
+      <a href="#contact" class="nav-link hover:text-blue-400">צור קשר</a>
+      <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-500 shadow-md">הצעת מחיר</a>
+    </nav>
+
+    <!-- Hamburger mobile -->
+    <button id="menu-btn" class="md:hidden flex flex-col space-y-1.5 z-50">
+      <span class="hamburger-line block w-7 h-[3px] bg-current rounded-full"></span>
+      <span class="hamburger-line block w-7 h-[3px] bg-current rounded-full"></span>
+      <span class="hamburger-line block w-7 h-[3px] bg-current rounded-full"></span>
+    </button>
+  </div>
+
+  <!-- Sidebar mobile -->
+  <div id="menu-overlay"></div>
+  <div id="mobile-menu" class="md:hidden bg-gradient-to-b from-blue-700 to-blue-800 shadow-2xl">
+    <div class="flex flex-col h-full">
+      <div class="p-6 border-b border-white/20">
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-bold text-white">ירמיהו מיזוג אוויר</span>
         </div>
-        
-        <div class="flex flex-col flex-1 py-4 overflow-y-auto">
-          <a href="#services" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">
-            <span class="mr-3">🔧</span> שירותים
+      </div>
+
+      <div class="flex flex-col flex-1 py-4 overflow-y-auto">
+        <a href="#services" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">🔧 שירותים</a>
+        <a href="#pricing" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">🖼️ גלריה</a>
+        <a href="#reviews" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">💬 חוות דעת</a>
+        <a href="#midrag" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">🌟 מידרג</a>
+        <a href="#contact" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">📞 צור קשר</a>
+
+        <div class="px-6 mt-6">
+          <a href="#contact" class="mobile-link block text-center bg-white text-blue-600 font-semibold px-6 py-4 rounded-full hover:bg-gray-100 shadow-lg transition-all">
+            הצעת מחיר מהירה
           </a>
-          <a href="#pricing" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">
-            <span class="mr-3">🖼️</span> גלריה
-          </a>
-          <a href="#about" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">
-            <span class="mr-3">👨‍🔧</span> אודות
-          </a>
-          <a href="#contact" class="mobile-link px-6 py-4 text-white text-lg font-medium hover:bg-white/10 border-b border-white/10 transition-all">
-            <span class="mr-3">📞</span> צור קשר
-          </a>
-          
-          <div class="px-6 mt-6">
-            <a href="#contact" class="mobile-link block text-center bg-white text-blue-600 font-semibold px-6 py-4 rounded-full hover:bg-gray-100 shadow-lg transition-all">
-              הצעת מחיר מהירה
-            </a>
-          </div>
         </div>
-        
-        <div class="p-6 border-t border-white/20">
-          <div class="text-center text-white/80 text-sm">
-            <p class="mb-2">📞 054-259-6213</p>
-            <p>⏰ ראשון-חמישי: 8:00-18:00</p>
-          </div>
+      </div>
+
+      <div class="p-6 border-t border-white/20">
+        <div class="text-center text-white/80 text-sm">
+          <p class="mb-2">📞 054-259-6213</p>
+          <p>⏰ ראשון-חמישי: 8:00-18:00</p>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- 🌤 Section principale -->
  <section 
@@ -410,8 +405,115 @@
     </div>
   </div>
 
+  <!-- 🌟 Commentaires clients -->
+<section id="reviews" class="py-16 md:py-20 bg-gray-50 text-center">
+  <div class="max-w-6xl mx-auto px-5">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-700 mb-8" data-aos="fade-down">מה הלקוחות שלנו אומרים</h2>
+
+    <!-- Moyenne générale -->
+    <div class="mb-12" data-aos="fade-up">
+      <div class="flex items-center justify-center space-x-2 space-x-reverse mb-2">
+        <span id="average-rating" class="text-3xl font-bold text-blue-600">4.8</span>
+        <span class="text-gray-600 text-lg">מתוך 5 ⭐</span>
+      </div>
+      <p class="text-gray-500">מבוסס על 12 חוות דעת אחרונות</p>
+    </div>
+
+    <!-- Grid des avis -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <!-- Avis 1 -->
+      <div class="bg-white p-6 rounded-3xl shadow-lg" data-aos="fade-up">
+        <div class="flex justify-center mb-3">
+          <div class="text-yellow-400">
+            ⭐⭐⭐⭐⭐
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4">“היה מעולה, ג'רמי עשה עבודה מקצועית ויסודית והמחיר היה משתלם מאוד.”</p>
+        <h4 class="font-semibold text-blue-700">ליאור ה.</h4>
+      </div>
+
+      <!-- Avis 2 -->
+      <div class="bg-white p-6 rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="150">
+        <div class="flex justify-center mb-3">
+          <div class="text-yellow-400">
+            ⭐⭐⭐⭐
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4">“היה מצוין עם ג'רמי. הוא בחור נהדר, היה מאוד חביב, ניהלנו שיחות והיה ממש כיף. הוא עשה לי התקנת מזגן שהעברתי מהדירה הקודמת שלי והיה לו קצת יותר עבודה מהרגיל. סידר הכל פיקס..”</p>
+        <h4 class="font-semibold text-blue-700">מוטי א.</h4>
+      </div>
+
+      <!-- Avis 3 -->
+      <div class="bg-white p-6 rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex justify-center mb-3">
+          <div class="text-yellow-400">
+            ⭐⭐⭐⭐⭐
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4">“חשבתי שאני צריכה להחליף את המזגן והוא התעקש שיגיע לבדוק ואמר שלא צריך להחליף אלא רק לתקן ותיקן באותו ביקור, היה ממש בסדר.”</p>
+        <h4 class="font-semibold text-blue-700">ליאורה בר.</h4>
+      </div>
+
+      <!-- Avis 4 -->
+      <div class="bg-white p-6 rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex justify-center mb-3">
+          <div class="text-yellow-400">
+            ⭐⭐⭐⭐⭐
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4">“מקצועי, דייקן, נעים ושירות מעולה.”</p>
+        <h4 class="font-semibold text-blue-700">טובה בורדו</h4>
+      </div>
+
+      <!-- Avis 5 -->
+      <div class="bg-white p-6 rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex justify-center mb-3">
+          <div class="text-yellow-400">
+            ⭐⭐⭐⭐⭐
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4">“היה מצוין! הגיע בזמן, עבד נקי ומסודר וגם המחיר שלקח היה נורמלי בעיניי.”</p>
+        <h4 class="font-semibold text-blue-700">יוסף בוחבוט</h4>
+      </div>
+
+      <!-- Avis 6 -->
+      <div class="bg-white p-6 rounded-3xl shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex justify-center mb-3">
+          <div class="text-yellow-400">
+            ⭐⭐⭐⭐⭐
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4">“ירמיהו מצוין! הוא איש ישר שרוצה להצליח לתקן ואני מאוד מרוצה מהשירות.”</p>
+        <h4 class="font-semibold text-blue-700">יעקב צ</h4>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+<!-- 🔗 Section מידרג -->
+<section id="midrag" class="py-16 md:py-20 bg-gradient-to-r from-blue-700 to-blue-500 text-white text-center">
+  <div class="max-w-5xl mx-auto px-5">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-10" data-aos="fade-down">
+      🌟 בדוק אותנו ב-מידרג
+    </h2>
+    <p class="text-base md:text-lg mb-8" data-aos="fade-up">
+      קבלו מידע על המחירים שלנו, חוות דעת מלקוחות מרוצים וצפו בפרופיל המלא שלנו באתר מידרג.
+    </p>
+    <a 
+      href="https://www.midrag.co.il/SpCard/Sp/82093?areaId=2&serviceId=284&sortByCategory=161&isGeneric=false" 
+      target="_blank"
+      class="inline-block bg-white text-blue-700 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-blue-100 transition-all"
+      data-aos="zoom-in"
+    >
+      צפה בפרופיל מידרג שלנו
+    </a>
+  </div>
+</section>
+
   <!-- 👨‍🔧 אודות -->
-  <section id="about" class="py-16 md:py-20 bg-gradient-to-r from-blue-700 to-blue-500 text-white text-center">
+  <!-- <section id="about" class="py-16 md:py-20 bg-gradient-to-r from-blue-700 to-blue-500 text-white text-center">
     <div class="max-w-5xl mx-auto px-5">
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-10" data-aos="fade-right">אודות</h2>
       <div class="bg-white/10 p-6 md:p-12 rounded-3xl shadow-xl" data-aos="fade-up">
@@ -422,7 +524,7 @@
         </p>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- 📞 צור קשר -->
   <section id="contact" class="py-16 md:py-20 bg-gray-100 text-center">
@@ -496,7 +598,7 @@
         <div class="bg-white p-6 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="150">
           <div class="text-4xl mb-3">📧</div>
           <h3 class="font-bold text-lg mb-2">אימייל</h3>
-          <a href="mailto:mickaelhalimi1@gmail.com" class="text-blue-600 hover:underline">info@climpro.co.il</a>
+          <a href="mailto:mickaelhalimi1@gmail.com" class="text-blue-600 hover:underline">jeremyhalimi55@gmail.com</a>
         </div>
         
         <div class="bg-white p-6 rounded-2xl shadow-md" data-aos="fade-up" data-aos-delay="300">
